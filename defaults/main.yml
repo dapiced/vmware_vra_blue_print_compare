@@ -1,0 +1,12 @@
+---
+
+vmware_vra_blue_print_compare__email_name_lst:
+    XXX@XXX.com
+
+vmware_vra_blue_print_compare__path: /opt/VMware_vRealize_CloudClient-4.7.0-13182508/bin
+
+vmware_vra_blue_print_compare__cloudclient_lst:
+  - {content_id: "La", type: "composite-blueprint", pathvra: "/var/tmp/vra_composite_blueprint/", destvra: "/var/tmp/vra_composite_blueprint/La.yaml", src: "composite-blueprint/La.yaml",  destans: "/var/tmp/ans_composite_blueprint/La.yaml", pathans: "/var/tmp/ans_composite_blueprint" }
+  - {content_id: "rh", type: "composite-blueprint", pathvra: "/var/tmp/vra_composite_blueprint/", destvra: "/var/tmp/vra_composite_blueprint/rh.yaml", src: "composite-blueprint/rh.yaml",  destans: "/var/tmp/ans_composite_blueprint/rh.yaml", pathans: "/var/tmp/ans_composite_blueprint" }
+  - {content_id: "08", type: "xaas-blueprint",      pathvra: "/var/tmp/vra_xaas_blueprint/",      destvra: "/var/tmp/vra_xaas_blueprint/08.yaml",      src: "xaas-blueprint/08.yaml",       destans: "/var/tmp/ans_xaas_blueprint/08.yaml",      pathans: "/var/tmp/ans_xaas_blueprint" }
+  - {content_id: "4b", type: "xaas-blueprint",      pathvra: "/var/tmp/vra_xaas_blueprint/",      destvra: "/var/tmp/vra_xaas_blueprint/4b.yaml",      src: "xaas-blueprint/4b.yaml",       destans: "/var/tmp/ans_xaas_blueprint/4b.yaml",      pathans: "/var/tmp/ans_xaas_blueprint" }
