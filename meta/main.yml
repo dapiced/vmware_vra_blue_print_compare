@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: dapiced
+  description: vmware_vra_blue_print_compare
+  license: Free
+  min_ansible_version: 2.8 
+  platforms:
+  - name: EL
+    versions:
+    - all
+  galaxy_tags:
+    - vmware
+    - vra
+    - blueprint
+    - cloudclient
+    - yaml
