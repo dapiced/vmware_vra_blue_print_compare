@@ -1,0 +1,15 @@
+---
+
+- name: Remove temporairy dir vra
+  file:
+    state: absent
+    path: "{{ item.pathvra }}"
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}"  
+
+- name: Remove temporairy dir vra
+  file:
+    state: absent
+    path: "{{ item.pathans }}"
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}"
+ 
+ 
