@@ -27,5 +27,3 @@
     msg: "the blueprint {{ file1 }} is different of {{ file2 }}"
   when:  checksumfile1 != checksumfile2
   tags: vmware_vra_blue_print_compare__alert_debug
-
-
