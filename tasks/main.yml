@@ -1,0 +1,12 @@
+---
+
+- name: files preparation
+  include: pre.yml  
+
+- name: checksum files
+  include: compare.yml file1={{ item.destvra }} file2={{ item.destans }}
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}" 
+
+- name: files post
+  include: post.yml
+  
