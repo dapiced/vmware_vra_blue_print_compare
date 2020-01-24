@@ -1,0 +1,31 @@
+---
+
+- name: Get the checksum of the first file
+  stat:
+    path : "{{ file1 }}"
+  register: vmware_vra_blue_print_compare_first_file
+  tags: vmware_vra_blue_print_compare__checksum_file1
+
+- name: Get the checksum of the first file fact
+  set_fact:
+    checksumfile1: "{{  vmware_vra_blue_print_compare_first_file.stat.checksum }}"
+  tags: vmware_vra_blue_print_compare__checksum_file1
+
+- name: Get the checksum of the second file
+  stat:
+    path : "{{ file2 }}"
+  register: vmware_vra_blue_print_compare_second_file
+  tags: vmware_vra_blue_print_compare__checksum_file2
+
+- name: Get the checksum of the second file fact
+  set_fact:
+    checksumfile2: "{{ vmware_vra_blue_print_compare_second_file.stat.checksum }}"
+  tags: vmware_vra_blue_print_compare__checksum_file2  
+
+- name: Alert ERROR Compare file checksum debug
+  debug:
+    msg: "the blueprint {{ file1 }} is different of {{ file2 }}"
+  when:  checksumfile1 != checksumfile2
+  tags: vmware_vra_blue_print_compare__alert_debug
+
+
