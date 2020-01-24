@@ -6,7 +6,7 @@ This role allows you to compare yaml blueprint / xaas as code files via a checks
 Requirements
 ------------
 
-Make sure the comparaison files are in the files directory
+Make sure the comparaison "files" are in the /files directory
 Add the config line. in default/main.yaml table
 
 Role Variables
