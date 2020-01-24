@@ -1,0 +1,26 @@
+---
+
+- name: Creation temp dir VRA
+  file:
+    state: directory
+    path: "{{ item.pathvra }}"  
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}" 
+
+- name: getcontent_id vra
+  shell: "{{ vmware_vra_blue_print_compare__path }}/cloudclient vra content simple export --content-id '{{ item.content_id }}' --type '{{ item.type }}' --path '{{ item.pathvra }}'"
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}"  
+
+- name: Creation temp dir ansible
+  file:
+    state: directory
+    path: "{{ item.pathans }}"
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}" 
+
+- name: copy reference file yaml
+  copy:
+    src:   "{{ item.src }}"
+    dest:  "{{ item.destans }}"
+    owner: root
+    group: root
+    mode:  0644
+  loop: "{{ vmware_vra_blue_print_compare__cloudclient_lst }}"
